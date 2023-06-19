@@ -17,9 +17,10 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php  base_url('admin/Dashboard')?>">
+                <a class="nav-link" href="<?php echo base_url('admin/Dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span>
+                </a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
