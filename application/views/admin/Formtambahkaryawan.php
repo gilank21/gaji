@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control">
-                    <option value=""> --Pilih Jenis Kelamin</option>
+                    <option value=""> --Pilih Jenis Kelamin--</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label>Jabatan</label>
                 <select name="jabatan" class="form-control">
-                    <option value=""> --Pilih Jabatan</option>
+                    <option value=""> --Pilih Jabatan--</option>
                     <?php foreach($jabatan as $j) : ?>
                     <option value="<?php echo $j->nama_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
                     <?php endforeach; ?>

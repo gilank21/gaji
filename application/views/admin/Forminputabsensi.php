@@ -47,8 +47,8 @@
                             </div>
                             
                             
-                                <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i>Tampilkan data</button>
-                                <a href="<?php echo base_url ('admin/Dataabsensi/Inputabsensi')?>" class="btn btn-success mb-2 ml-2"><i class="fas fa-plus"></i>Input Kehadiran</a>
+                                <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i>Generate</button>
+                                
                             
                          </form>
             </div>
@@ -75,12 +75,9 @@
 
 
 
-                            <?php
-                                $jml_data = count($absensi);
-                                if($jml_data > 0 ) {
-                            ?>
-
-
+                            
+                            <form method="POST">
+                            <button class="btn btn-success mb-3" type="submit" name="submit" value="submit">Simpan</button>
                             <table class="table table-border table-stripes">
                                 <tr>
                                     <td class="text-center">No</td>
@@ -88,30 +85,37 @@
                                     <td class="text-center">Nama Karyawan</td>
                                     <td class="text-center">Jenis Kelamin</td>
                                     <td class="text-center">jabatan</td>
-                                    <td class="text-center">Hadir</td>
-                                    <td class="text-center">Sakit</td>
-                                    <td class="text-center">Alpha</td>
+                                    <td class="text-center" width="8%">Hadir</td>
+                                    <td class="text-center" width="8%">Sakit</td>
+                                    <td class="text-center" width="8%">Alpha</td>
+                                    
 
 
                                 </tr>
-                                <?php $no=1; foreach ($absensi as $a) :?>
+                                <?php $no=1; foreach ($input_absensi as $a) :?>
                                     <tr>
+
+
+                                    <input type="hidden" name="bulan[]" class=" form-control" value="<?php echo $bulantahun ?> ">
+                                    <input type="hidden" name="nik[]" class=" form-control" value="<?php echo $a->nik ?> ">
+                                    <input type="hidden" name="nama_karyawan[]" class=" form-control" value="<?php echo $a->nama_karyawan ?> ">
+                                    <input type="hidden" name="jenis_kelamin[]" class=" form-control" value="<?php echo $a->jenis_kelamin ?> ">
+                                    <input type="hidden" name="nama_jabatan[]" class=" form-control" value="<?php echo $a->nama_jabatan ?> ">
                                         <td> <?php echo $no++ ?></td>
                                         <td><?php echo $a->nik ?></td>
                                         <td><?php echo $a->nama_karyawan ?></td>
                                         <td><?php echo $a->jenis_kelamin ?></td>
                                         <td><?php echo $a->nama_jabatan ?></td>
-                                        <td><?php echo $a->hadir ?></td>
-                                        <td><?php echo $a->sakit ?></td>
-                                        <td><?php echo $a->alpha ?></td>
+                                        <td><input type="number" name="hadir[]" class=" form-control" value="0"></td>
+                                        <td><input type="number" name="sakit[]" class=" form-control" value="0"></td>
+                                        <td><input type="number" name="alpha[]" class=" form-control" value="0"></td>
                                     </tr>
                                 
                                 <?php endforeach; ?>
 
-                            </table>
-                            <?php }else{ ?>
-                                <span class="badge badge-danger"><i class="fas fa-info-circle"></i> Data masih kosong, silahkan input data kehadiran pada bulan dan tahun yang anda pilih</span>
-                            <?php } ?>    
+                            </table><br><br><br><br>
+                            </form>
+                             
 
 </div>
 
