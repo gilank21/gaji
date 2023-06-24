@@ -34,13 +34,29 @@
                     
                 ?>
             </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" value="<?php echo $k->username ?>">
+                <?php echo form_error(
+                    'username','<div class="text-small text-danger"></div>') 
+                    
+                ?>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="text" name="password" class="form-control" value="<?php echo $k->password ?>">
+                <?php echo form_error(
+                    'password','<div class="text-small text-danger"></div>') 
+                    
+                ?>
+            </div>
             
             <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control" >
                     <option value="<?php echo $k->jenis_kelamin ?>"> <?php echo $k->jenis_kelamin ?></option>
                     <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option value="wanita">wanita</option>
                 </select>
                 <?php echo form_error(
                     'jenis_kelamin','<div class="text-small text-danger"></div>') 
@@ -87,6 +103,20 @@
             <div class="form-group">
                 <label>Photo</label>
                 <input type="file" name="photo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="hak_akses"  class="form-control" >
+                    <option value="<?php echo $k->hak_akses ?>">
+                        <?php if ($k->hak_akses=='1'){
+                            echo "Admin";
+                        }else{
+                            echo"karyawan";
+
+                        }?></option>
+                    <option value="1">Admin</option>
+                    <option value="2"> karyawan</option>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>

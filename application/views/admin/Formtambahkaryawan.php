@@ -29,13 +29,29 @@
                     
                 ?>
             </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control">
+                <?php echo form_error(
+                    'username','<div class="text-small text-danger"></div>') 
+                    
+                ?>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="text" name="password" class="form-control">
+                <?php echo form_error(
+                    'password','<div class="text-small text-danger"></div>') 
+                    
+                ?>
+            </div>
             
             <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control">
                     <option value=""> --Pilih Jenis Kelamin--</option>
                     <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option value="wanita">Wanita</option>
                 </select>
                 <?php echo form_error(
                     'jenis_kelamin','<div class="text-small text-danger"></div>') 
@@ -82,6 +98,14 @@
             <div class="form-group">
                 <label>Photo</label>
                 <input type="file" name="photo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="hak_akses"  class="form-control" >
+                    <option value="">--pilih hak akses--</option>
+                    <option value="1">Admin</option>
+                    <option value="2"> karyawan</option>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>

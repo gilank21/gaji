@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('admin/Dashboard') ?>">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('karyawan/Dashboard') ?>">
               
                 <div class="sidebar-brand-text mx-3">APP GAJI </div>
             </a>
@@ -17,64 +17,19 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin/Dashboard') ?>">
+                <a class="nav-link" href="<?php echo base_url('karyawan/Dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Master Data</span>
+                <a class="nav-link" href="<?php echo base_url('karyawan/data_gaji') ?>">
+                    <i class="fas fa-fw fa-money-check-alt"></i>
+                    <span>Data gaji</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="<?php echo base_url('admin/Datakaryawan')?>">Data Karyawan</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/Datajabatan')?>">Data Jabatan</a>
-                    </div>
-                </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Transaksi</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="<?php echo base_url('admin/Dataabsensi')?>">Data Absensi</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/Potongangaji')?>">Setting Potongan gaji</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/Datagaji')?>">Data Gaji </a>
-                        
-                    </div>
-                </div>
-            </li>
-
             
-          
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Laporan</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="<?php echo base_url('admin/Laporangaji')?>">Laporan gaji</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/Slipgaji')?>">Slip gaji</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/Laporanabsensi')?>">Laporan Absensi</a>
-                        
-                </div>
-            </li>
+            
 
             
             <li class="nav-item">
