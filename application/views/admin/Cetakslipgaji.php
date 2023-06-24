@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title> <?php echo $title ?></title>
+        <style type="text/css">
+            body{
+                font-family: Arial;
+                color: black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>PT JAYA MAJU</h1>
+            <h2>slip gaji karyawan</h2>
+            <hr style="width: 50%; border-width: 5px; color : black ">
+        </center>
+        <?php
+            if((isset($_GET['bulan']) && $_GET['bulan']!='')&&(isset($_GET['tahun']) && $_GET['tahun']!='')){
+                $bulan = $_GET['bulan'];
+                $tahun = $_GET['tahun'];
+                $bulantahun = $bulan.$tahun;
+                
+
+            }else{
+                $bulan = date('m');
+                $tahun = date('Y');
+                $bulantahun = $bulan.$tahun;
+
+            }
+        ?>
+        <?php foreach($potongan as $p) {
+            $potongan= $p->jml_potongan;
+            
+
+
+
+        }?>
+            
+            
+            
+        <?php  foreach($print_slip as $ps) : ?>
+        <?php $potongan_gaji=$ps->alpha * $potongan ?>
+        <table style="width: 100% ">
+            <tr>
+                <td width="20%">Nama Karyawan</td>
+                <td width="2%">:</td>
+                <td><?php echo $ps->nama_karyawan ?></td>
+            </tr>
+            <tr>
+                <td>nik</td>
+                <td>:</td>
+                <td><?php echo $ps->nik ?></td>
+            </tr>
+            <tr>
+                <td>jabatan</td>
+                <td>:</td>
+                <td><?php echo $ps->nama_jabatan ?></td>
+            </tr>
+            <tr>
+                <td>Bulan</td>
+                <td>:</td>
+                <td><?php echo $bulan ?></td>
+            </tr>
+            <tr>
+                <td>tahun</td>
+                <td>:</td>
+                <td><?php echo $tahun ?></td>
+            </tr>
+        </table>
+
+
+        <table class="table table-striped table-bordered mt-4">
+            <tr>
+                <th class="text-center" width="5%">NO</th>
+                <th>keterangan</th>
+                <th>jumlah</th>
+            </tr>
+            <tr>
+                <td> 1 </td>
+                <td> gaji pokok </td>
+                <td>Rp. <?php echo number_format($ps->gaji_pokok,0,',','.') ?> </td>
+            </tr>
+            <tr>
+                <td> 2 </td>
+                <td> Tunjangan transportasi </td>
+                <td>Rp. <?php echo number_format($ps->tj_transport,0,',','.') ?> </td>
+            </tr>
+            <tr>
+                <td> 3 </td>
+                <td> uang makan </td>
+                <td>Rp. <?php echo number_format($ps->uang_makan,0,',','.') ?> </td>
+            </tr>
+            <tr>
+                <td> 4 </td>
+                <td> potongan </td>
+                <td>Rp. <?php echo number_format($potongan_gaji,0,',','.') ?> </td>
+            </tr>
+            <tr>
+                
+                <th colspan="2" style="text-align: right;"> Total gaji </th>
+                <td>Rp. <?php echo number_format($ps->gaji_pokok + $ps->tj_transport+$ps->uang_makan - $potongan_gaji,0,',','.') ?> </td>
+            </tr>
+        </table>
+        <table width="100%">
+            <tr>
+                <td></td>
+                <td>
+                    <p>Karyawan</p>
+                    <br>
+                    <br>
+                    <p class="font-weight-bold"><?php echo $ps->nama_karyawan ?></p>
+                </td>
+                <td width="200px"><p>Jakarta, <?php echo date("d M Y") ?> <br> Finance, </p>
+                <br>
+                <br>
+                <p>_________________________</p>
+                </td>
+            </tr>
+
+        </table>
+        <?php endforeach ; ?>
+    </body>
+
+</html>
+
+
+<!-- <script type="text/javascript">
+    window.print(); 
+</script> -->
