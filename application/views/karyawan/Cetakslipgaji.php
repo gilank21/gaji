@@ -16,6 +16,7 @@
             <hr style="width: 50%; border-width: 5px; color : black ">
         </center>
         
+        ?>
         <?php foreach($potongan as $p) {
             $potongan= $p->jml_potongan;
             

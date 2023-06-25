@@ -96,14 +96,14 @@
                                 </tr>
                                 <?php $no=1; foreach ($absensi as $a) :?>
                                     <tr>
-                                        <td> <?php echo $no++ ?></td>
-                                        <td><?php echo $a->nik ?></td>
-                                        <td><?php echo $a->nama_karyawan ?></td>
-                                        <td><?php echo $a->jenis_kelamin ?></td>
-                                        <td><?php echo $a->nama_jabatan ?></td>
-                                        <td><?php echo $a->hadir ?></td>
-                                        <td><?php echo $a->sakit ?></td>
-                                        <td><?php echo $a->alpha ?></td>
+                                        <td class="text-center"> <?php echo $no++ ?></td>
+                                        <td class="text-center"><?php echo $a->nik ?></td>
+                                        <td class="text-center"><?php echo $a->nama_karyawan ?></td>
+                                        <td class="text-center"><?php echo $a->jenis_kelamin ?></td>
+                                        <td class="text-center"><?php echo $a->nama_jabatan ?></td>
+                                        <td class="text-center"><?php echo $a->hadir ?></td>
+                                        <td class="text-center"><?php echo $a->sakit ?></td>
+                                        <td class="text-center"><?php echo $a->alpha ?></td>
                                     </tr>
                                 
                                 <?php endforeach; ?>

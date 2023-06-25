@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('karyawan/data_gaji') ?>">
+                <a class="nav-link" href="<?php echo base_url('karyawan/Datagaji') ?>">
                     <i class="fas fa-fw fa-money-check-alt"></i>
                     <span>Data gaji</span>
                 </a>
@@ -33,7 +33,7 @@
 
             
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('gantipassword')?>">
+                <a class="nav-link" href="<?php echo base_url('karyawan/gantipassword')?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Ganti Password</span></a>
             </li>
